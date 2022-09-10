@@ -3,7 +3,6 @@ sidebar_position: 3
 ---
 
 # Dahua/Lorex
-
 ### Options
 ```
 optional arguments:
@@ -27,6 +26,19 @@ optional arguments:
                         VideoMotion event index
 ```
 
+### Dahua N43AJ52
+**Important:** You must set the camera video "Encode Mode" to `H.264` or you will get this error: `...hevc not compatible with flv`
+```
+unifi-cam-proxy -H {NVR IP} \
+-i {camera IP} \
+-c client.pem \
+-t {Adoption token} \
+dahua \
+-u {username} -p {password} \
+--c 1 \
+--sub-stream 1 \
+--snapshot-channel 1
+```
 
 ### Lorex LNB4321B
 
