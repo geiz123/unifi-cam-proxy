@@ -101,7 +101,8 @@ class DahuaCam(UnifiCamBase):
                     action = event[1].get("action")
                     index = event[1].get("index")
 
-                    if not index or int(index) != self.args.motion_index:
+                    # Dahua N43AJ52 always return index=0
+                    if int(index) != self.args.motion_index:
                         self.logger.debug(f"Skipping event {event}")
                         continue
 
